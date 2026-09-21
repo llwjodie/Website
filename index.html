@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jodie Luk Lai Wa</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #000000; height: 100%; }
+  body { font-family: "Noto Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #ffffff; text-decoration: none; }
+  a:hover { color: #ffffff; }
+  * { box-sizing: border-box; }
+  .enter-link { transition: letter-spacing 300ms ease; }
+  .enter-link:hover { letter-spacing: 0.42em; }
+</style>
+</head>
+<body>
+<div style="position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000000">
+  <video src="assets/landing.mp4" autoplay loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+  <a href="work.html" class="enter-link" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase">Enter</a>
+</div>
+<script>
+  var v = document.querySelector("video");
+  if (v) {
+    v.muted = true;
+    var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    play();
+    v.addEventListener("canplay", play);
+    v.addEventListener("loadeddata", play);
+  }
+</script>
+</body>
+</html>
